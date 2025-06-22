@@ -21,6 +21,7 @@ class FaissOperator(metaclass=Singleton):
             except Exception as e:
                 logutil.error(f"加载 Faiss 索引时出错: {e}")
         # 创建一个基于 L2 距离的索引，并使用 IndexIDMap 包装
+        # TODO: 这里可以根据实际情况选择不同的索引类型，后续优化算法场景·
         index = faiss.IndexIVFFlat(VECTOR_DIM)
         return faiss.IndexIDMap(index)
 
