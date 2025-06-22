@@ -1,0 +1,30 @@
+@startuml
+' 定义泳道
+actor User
+participant RAG
+participant System
+participant LLM
+
+
+== query 处理流程 ==
+' 激活生命周期
+User -> System: 提交任务
+activate System
+
+System -> System: 分配任务
+System -> System: 执行任务
+System -> System: 任务完成
+
+System -> User: 通知任务完成
+deactivate System
+====
+@enduml
+
+
+@startuml
+== CodeRag构造流程 ==
+Participant SourceCode
+participant DB
+participant VectorDB
+== ==
+@enduml
