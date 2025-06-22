@@ -25,7 +25,7 @@ class AppConfig(BaseSettings):
 
     # embedding 模型相关配置
     embedding_model: str = 'Salesforce/codet5-small'
-    embedding_model_dim: int = 1024
+    embedding_model_dim: int = 128  # 建议从 128 或 256 维开始尝试，这样能在保证一定性能的同时，减少计算资源的消耗
     embedding_model_dim_type: str = "float32"
     embedding_model_device: str = "cpu"
 
